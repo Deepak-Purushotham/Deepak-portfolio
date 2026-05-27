@@ -1,82 +1,197 @@
+/* ---------- GLOBAL ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    color: #222;
-    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    background: #f7f9fc;
+    color: #1e293b;
+    line-height: 1.8;
 }
+
+/* ---------- CONTAINER ---------- */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* ---------- HERO ---------- */
+
 .hero {
-    background: #0d2b45;
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a 0%,
+        #1e3a5f 100%
+    );
+
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 140px 20px 110px;
 }
-.container {
-    max-width: 1000px;
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(255,255,255,.85);
+    margin-bottom: 28px;
+}
+
+.hero p {
+    max-width: 700px;
     margin: auto;
-    padding: 20px;
+    font-size: 1.1rem;
+    opacity: 0.95;
 }
-.section {
-    padding: 50px 20px;
-}
-.light {
-    background: #f5f7fa;
-}
-h1, h2, h3, h4 {
-    margin-bottom: 10px;
-}
+
+/* ---------- BUTTON ---------- */
+
 .btn {
     display: inline-block;
+    margin-top: 35px;
     background: white;
-    color: #0d2b45;
-    padding: 12px 20px;
+    color: #0f172a;
+    padding: 16px 32px;
+    border-radius: 999px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+    font-weight: 600;
+    transition: all .3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
 }
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 10px;
-    list-style: none;
-    padding: 0;
+
+.btn:hover {
+    transform: translateY(-3px);
 }
-.grid li {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
+
+/* ---------- SECTIONS ---------- */
+
+.section {
+    padding: 90px 0;
 }
+
+.light {
+    background: #eef3f8;
+}
+
+h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-align: center;
+    color: #0f172a;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+    color: #0f172a;
+}
+
+/* ---------- TEXT ---------- */
+
+.section p {
+    font-size: 1.05rem;
+    color: #475569;
+}
+
+/* ---------- MODERN SKILLS ---------- */
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px;
+    grid-template-columns:
+    repeat(auto-fit, minmax(260px,1fr));
+
+    gap: 22px;
     margin-top: 30px;
 }
 
 .skill-card {
-    background: white;
-    border-radius: 14px;
-    padding: 18px 22px;
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(10px);
+
+    border-radius: 22px;
+    padding: 22px 24px;
+
     display: flex;
     align-items: center;
-    gap: 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    transition: transform 0.25s ease;
+    gap: 16px;
+
+    border: 1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+    0 8px 24px rgba(15,23,42,.06);
+
+    transition: all .3s ease;
 }
 
 .skill-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
 }
 
 .icon {
-    background: #0d2b45;
-    color: white;
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
+
     border-radius: 50%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #1e3a5f,
+        #0f172a
+    );
+
+    color: white;
+    font-weight: 700;
+}
+
+/* ---------- EXPERIENCE CARDS ---------- */
+
+.experience-card {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    margin-bottom: 25px;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.05);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:768px){
+
+.hero {
+    padding: 100px 20px;
+}
+
+.hero h1{
+    font-size:2.7rem;
+}
+
+.hero h2{
+    font-size:1.1rem;
+}
+
+h3{
+    font-size:1.8rem;
+}
+
 }
