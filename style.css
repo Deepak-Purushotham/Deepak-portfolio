@@ -1,286 +1,343 @@
 /* =========================
-   GLOBAL
+GLOBAL
 ========================= */
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:#f8fafc;
-    color:#1e293b;
-    line-height:1.7;
+font-family:'Inter',sans-serif;
+background:#f8fafc;
+color:#1e293b;
+line-height:1.75;
+overflow-x:hidden;
 }
 
-/* subtle page background */
+/* subtle watermark background */
 
 body::before{
-    content:"";
-    position:fixed;
-    inset:0;
+content:"";
+position:fixed;
+inset:0;
+z-index:-1;
 
-    background:
-    radial-gradient(circle at top left,
-    rgba(30,58,95,.06),
-    transparent 30%),
+```
+background:
+radial-gradient(circle at top left,
+rgba(30,58,95,.05),
+transparent 28%),
 
-    radial-gradient(circle at bottom right,
-    rgba(15,23,42,.05),
-    transparent 35%);
+radial-gradient(circle at bottom right,
+rgba(15,23,42,.04),
+transparent 30%),
 
-    z-index:-1;
+linear-gradient(
+rgba(255,255,255,.65),
+rgba(255,255,255,.65)
+);
+
+opacity:.9;
+```
+
 }
-
-/* =========================
-   CONTAINER
-========================= */
 
 .container{
-    width:90%;
-    max-width:1120px;
-    margin:auto;
+width:90%;
+max-width:1100px;
+margin:auto;
 }
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
-    text-align:center;
-    padding:120px 20px 90px;
+text-align:center;
+padding:110px 20px 90px;
 
-    background:
-    linear-gradient(
-    135deg,
-    #0f172a 0%,
-    #1b3553 100%
-    );
+```
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#17314e
+);
 
-    color:white;
+color:white;
 
-    border-bottom-left-radius:40px;
-    border-bottom-right-radius:40px;
+position:relative;
+```
+
+}
+
+.hero::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-60px;
+height:120px;
+
+```
+background:#f8fafc;
+
+border-top-left-radius:100%;
+border-top-right-radius:100%;
+```
+
 }
 
 .hero h1{
-    font-size:4.6rem;
-    font-weight:800;
-    letter-spacing:-2px;
-    margin-bottom:12px;
+font-size:4.5rem;
+font-weight:800;
+letter-spacing:-2px;
+margin-bottom:10px;
 }
 
 .hero h2{
-    font-size:1.25rem;
-    font-weight:500;
-    color:rgba(255,255,255,.85);
-    margin-bottom:24px;
+font-size:1.2rem;
+font-weight:500;
+color:rgba(255,255,255,.86);
+margin-bottom:22px;
 }
 
 .hero p{
-    max-width:700px;
-    margin:auto;
-    opacity:.9;
-    font-size:1.05rem;
+max-width:720px;
+margin:auto;
+font-size:1.05rem;
+opacity:.92;
 }
 
-/* =========================
-   BUTTON
-========================= */
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+margin-top:35px;
+}
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+background:white;
+color:#0f172a;
 
-    margin-top:35px;
+```
+padding:15px 26px;
 
-    background:white;
-    color:#0f172a;
+border-radius:999px;
 
-    padding:16px 28px;
+text-decoration:none;
+font-weight:600;
 
-    border-radius:999px;
+transition:.3s ease;
 
-    text-decoration:none;
-    font-weight:600;
+box-shadow:
+0 10px 30px rgba(0,0,0,.12);
+```
 
-    transition:.3s ease;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,.15);
 }
 
 .btn:hover{
-    transform:translateY(-4px);
+transform:translateY(-3px);
+}
+
+.secondary-btn{
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.15);
+color:white;
 }
 
 /* =========================
-   SECTION
+SECTIONS
 ========================= */
 
 .section{
-    padding:70px 0;
+padding:65px 0;
 }
 
 h3{
-    font-size:2rem;
-    text-align:center;
-    margin-bottom:40px;
-    font-weight:700;
-    color:#0f172a;
+font-size:2rem;
+text-align:center;
+margin-bottom:35px;
+color:#0f172a;
 }
 
 .section p{
-    color:#475569;
-    font-size:1rem;
+color:#475569;
 }
 
 /* =========================
-   LIGHT SECTION
+REMOVE BLOCKY SECTIONS
 ========================= */
 
 .light{
-    background:
-    rgba(255,255,255,.55);
-
-    backdrop-filter:blur(14px);
-
-    border-radius:30px;
-
-    margin:35px auto;
-    width:94%;
+background:transparent;
+width:100%;
+margin:0;
+border-radius:0;
 }
 
 /* =========================
-   SKILLS
+MODERN SKILLS
 ========================= */
 
 .skills-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
-
-    gap:18px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+gap:18px;
 }
 
 .skill-card{
-    background:
-    rgba(255,255,255,.82);
+background:rgba(255,255,255,.65);
+backdrop-filter:blur(8px);
 
-    backdrop-filter:blur(10px);
+```
+border:1px solid rgba(255,255,255,.8);
 
-    border-radius:22px;
+border-radius:20px;
 
-    padding:20px;
+padding:18px 20px;
 
-    display:flex;
-    align-items:center;
-    gap:14px;
+display:flex;
+gap:14px;
+align-items:flex-start;
 
-    transition:.3s ease;
+transition:.3s ease;
 
-    border:
-    1px solid rgba(255,255,255,.8);
+box-shadow:
+0 8px 24px rgba(15,23,42,.05);
+```
 
-    box-shadow:
-    0 8px 20px rgba(15,23,42,.05);
 }
 
 .skill-card:hover{
-    transform:
-    translateY(-6px);
+transform:translateY(-4px);
 }
 
 .icon{
-    width:42px;
-    height:42px;
+min-width:38px;
+min-height:38px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+```
+border-radius:50%;
 
-    border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    background:
-    linear-gradient(
-    135deg,
-    #1e3a5f,
-    #0f172a
-    );
+background:
+linear-gradient(
+135deg,
+#1e3a5f,
+#0f172a
+);
 
-    color:white;
-    font-size:.95rem;
-    font-weight:700;
+color:white;
+font-size:.9rem;
+font-weight:700;
+```
+
 }
 
 /* =========================
-   EXPERIENCE CARDS
+EXPERIENCE
 ========================= */
 
 .experience-card{
-    background:white;
+background:rgba(255,255,255,.72);
 
-    border-radius:24px;
+```
+border-radius:26px;
 
-    padding:28px;
+padding:28px;
 
-    margin-bottom:20px;
+margin-bottom:24px;
 
-    box-shadow:
-    0 10px 30px rgba(15,23,42,.06);
+backdrop-filter:blur(12px);
 
-    transition:.3s ease;
-}
+box-shadow:
+0 12px 30px rgba(15,23,42,.05);
+```
 
-.experience-card:hover{
-    transform:translateY(-4px);
 }
 
 .experience-card h4{
-    font-size:1.15rem;
-    margin-bottom:12px;
+margin-bottom:18px;
+color:#0f172a;
+}
+
+/* modern bullet replacement */
+
+.modern-list{
+list-style:none;
+}
+
+.modern-list li{
+position:relative;
+
+```
+padding-left:28px;
+margin-bottom:16px;
+
+color:#475569;
+```
+
+}
+
+.modern-list li::before{
+content:"";
+
+```
+width:10px;
+height:10px;
+
+border-radius:50%;
+
+background:#1e3a5f;
+
+position:absolute;
+left:0;
+top:11px;
+```
+
 }
 
 /* =========================
-   CONTACT
+CONTACT
 ========================= */
 
 .contact{
-    text-align:center;
+text-align:center;
+padding-bottom:70px;
 }
 
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media(max-width:768px){
 
-.hero{
-    padding:90px 20px 70px;
-}
-
 .hero h1{
-    font-size:2.8rem;
+font-size:2.8rem;
 }
 
 .hero h2{
-    font-size:1rem;
-}
-
-h3{
-    font-size:1.7rem;
+font-size:1rem;
 }
 
 .section{
-    padding:50px 0;
+padding:50px 0;
+}
+
+h3{
+font-size:1.7rem;
 }
 
 }
