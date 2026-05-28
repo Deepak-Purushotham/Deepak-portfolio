@@ -459,3 +459,45 @@ font-weight:600;
     box-shadow:
     0 8px 24px rgba(15,23,42,.05);
 }
+/* =========================
+   IMPACT CARDS
+========================= */
+
+.impact-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:20px;
+}
+
+.impact-card{
+    background:
+    rgba(255,255,255,.72);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    transition:.3s ease;
+
+    box-shadow:
+    0 8px 24px rgba(15,23,42,.05);
+}
+
+.impact-card:hover{
+    transform:translateY(-5px);
+}
+
+.impact-card h4{
+    margin-bottom:14px;
+    color:#0f172a;
+    font-size:1.1rem;
+}
+
+.impact-card p{
+    color:#475569;
+    line-height:1.8;
+}
